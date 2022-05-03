@@ -1,5 +1,5 @@
 ﻿
-namespace BanqueConservatoire
+namespace Banque_Conservatoire
 {
     partial class Form1
     {
