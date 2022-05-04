@@ -18,7 +18,7 @@ namespace TestBanque.DAL
         private string connString;
 
 
-        private ConnectionSql(string unProvider, string uneDataBase, string unUid, string unMdp)
+        private ConnectionSql(string unProvider, string uneDataBase, string unUid, string unMdp, string unPort = "3306")
         {
 
 
@@ -26,6 +26,8 @@ namespace TestBanque.DAL
             {
                 connString = "SERVER=" + unProvider + ";" + "DATABASE=" +
                 uneDataBase + ";" + "UID=" + unUid + ";" + "PASSWORD=" + unMdp + ";";
+
+
                 try
                 {
                     oleCn = new MySqlConnection(connString);

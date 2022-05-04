@@ -31,7 +31,6 @@ C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\bin\Debug\System.N
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.csproj.AssemblyReference.cache
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.Vue.Form1.resources
-C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.Vue.FormClient.resources
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.Properties.Resources.resources
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.csproj.GenerateResource.cache
 C:\Users\user\Documents\GitHub\BanqueConservatoire\TestBanque\obj\Debug\TestBanque.csproj.CoreCompileInputs.cache

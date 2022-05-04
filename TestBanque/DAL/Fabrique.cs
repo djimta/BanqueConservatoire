@@ -10,15 +10,17 @@ namespace TestBanque.DAL
     {
         private static string providerMysql = "localhost";
 
-        private static string dataBaseMysql = "db_zicmu";
+        private static string dataBaseMysql = "bd_zicmu";
 
-        private static string uidMysql = "IntraAdmin";
+        private static string uidMysql = "root";
 
-        private static string mdpMysql = "6syf4R_4";
+        private static string mdpMysql = "";
+       
 
         public static string ProviderMysql { get => providerMysql; }
         public static string DataBaseMysql { get => dataBaseMysql; }
         public static string UidMysql { get => uidMysql; }
         public static string MdpMysql { get => mdpMysql; }
+  
     }
 }
