@@ -18,7 +18,7 @@ namespace TestBanque.DAL
         private string connString;
 
 
-        private ConnectionSql(string unProvider, string uneDataBase, string unUid, string unMdp, string unPort = "3306")
+        private ConnectionSql(string unProvider, string uneDataBase, string unUid, string unMdp)
         {
 
 

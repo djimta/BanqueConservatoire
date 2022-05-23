@@ -31,9 +31,9 @@ namespace TestBanque.Vue
         private void Form1_Load(object sender, EventArgs e)
         {
             adherent = monManager.getAdherents();
-            refreshLb(0);
+            refreshComboBox(0);
         }
-        private void refreshLb(int index)
+        private void refreshComboBox(int index)
         {
             comboBox1.DataSource = null;
             comboBox1.DataSource = adherent;
@@ -92,6 +92,7 @@ namespace TestBanque.Vue
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
         private void button2_Click(object sender, EventArgs e)

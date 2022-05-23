@@ -125,6 +125,7 @@
   <ItemGroup>
     <Compile Include="Controleur\Manager.cs" />
     <Compile Include="DAL\AdherantsDao.cs" />
+    <Compile Include="DAL\InscriptionDao.cs" />
     <Compile Include="DAL\ConnectionSql.cs" />
     <Compile Include="DAL\Fabrique.cs" />
     <Compile Include="Model\Adherent.cs" />
