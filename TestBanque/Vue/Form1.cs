@@ -19,25 +19,43 @@ namespace TestBanque.Vue
     public partial class Form1 : Form
     {
 
-        List<Adherent> adherent;
+        List<Adherent> List_adherent;
+        List<Inscritption> List_inscrptions;
+        Adherent adherent_Selected = new Adherent(0, null, null);
         Manager monManager = new Manager();
         public Form1()
         {
             InitializeComponent();
-            
+           
         }
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            adherent = monManager.getAdherents();
+            List_adherent = monManager.getAdherents();
             refreshComboBox(0);
         }
         private void refreshComboBox(int index)
-        {
+        {    
             comboBox1.DataSource = null;
-            comboBox1.DataSource = adherent;
-            comboBox1.DisplayMember = "Description";
+            comboBox1.DataSource = List_adherent;
+            comboBox1.DisplayMember = "Description"; 
+            
+            
+        }
+
+        private void refreshListBox(int index)
+        {
+            List_Box1.DataSource = null;
+            List_Box1.DataSource = List_inscrptions;
+            List_Box1.DisplayMember = "Description";
+
+            /*for (int i = 0; i < List_inscrptions.Count; i++)
+            {
+                if (monManager.ChargementDbPaye(List_inscrptions[i]) == false)
+                {
+                    List_Box1.Items[i].BackColor = Color.Red;
+                }
+            }*/
+
         }
 
         private void cToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,10 +72,10 @@ namespace TestBanque.Vue
         {
            
         }
-
+ 
         private void lb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,6 +110,13 @@ namespace TestBanque.Vue
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            int i = comboBox1.SelectedIndex;
+
+            adherent_Selected = List_adherent[i];
+            List_inscrptions = monManager.chargementDbInsc(adherent_Selected);
+            refreshListBox(0);
+           
 
         }
 

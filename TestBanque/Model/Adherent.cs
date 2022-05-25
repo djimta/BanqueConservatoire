@@ -38,7 +38,7 @@ namespace TestBanque.Model
 		}
 		public override string ToString()
 		{
-			return (this.num +";" + this.nom + " ; " + this.prenom + " ; " );
+			return ("Adhérent n°"+this.num +" : " + this.nom + " " + this.prenom + " " );
 		}
 	}
 }

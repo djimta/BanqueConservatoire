@@ -21,7 +21,6 @@ namespace TestBanque.DAL
         private ConnectionSql(string unProvider, string uneDataBase, string unUid, string unMdp)
         {
 
-
             try
             {
                 connString = "SERVER=" + unProvider + ";" + "DATABASE=" +

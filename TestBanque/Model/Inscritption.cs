@@ -11,26 +11,34 @@ namespace TestBanque.Model
         private Adherent unAdherent;
         private Cours unCours;
 
-        bool payee = false;
+        private int payee;
 
-        public Inscritption()
-        {
 
-        }
-
-        public Inscritption(Adherent unAdherent, Cours unCours, bool payee = false)
+        public Inscritption(Adherent unAdherent, Cours unCours, int payee = 1)
         {
             this.unAdherent = unAdherent;
             this.unCours = unCours;
-            this.Payee = payee;
+            this.payee = payee;
         }
 
-        public int insciPayee()
+        public bool insciPayee()
         {
-            Payee = true;
-            return 0;
+            if (this.payee == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
 
-        public bool Payee { get => payee; set => payee = value; }
+        public int Payee { get => Payee; }
+
+        public override string ToString()
+        {
+            return ("Cours :"+ unCours.NomInstru);
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace TestBanque.Vue
         /// </summary>
         private void InitializeComponent()
         {
-            this.lb = new System.Windows.Forms.ListBox();
+            this.List_Box1 = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.operationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.créditerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,15 +43,15 @@ namespace TestBanque.Vue
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lb
+            // List_Box1
             // 
-            this.lb.FormattingEnabled = true;
-            this.lb.Location = new System.Drawing.Point(333, 45);
-            this.lb.Margin = new System.Windows.Forms.Padding(2);
-            this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(358, 251);
-            this.lb.TabIndex = 0;
-            this.lb.SelectedIndexChanged += new System.EventHandler(this.lb_SelectedIndexChanged);
+            this.List_Box1.FormattingEnabled = true;
+            this.List_Box1.Location = new System.Drawing.Point(333, 45);
+            this.List_Box1.Margin = new System.Windows.Forms.Padding(2);
+            this.List_Box1.Name = "List_Box1";
+            this.List_Box1.Size = new System.Drawing.Size(358, 251);
+            this.List_Box1.TabIndex = 0;
+            this.List_Box1.SelectedIndexChanged += new System.EventHandler(this.lb_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -153,7 +153,7 @@ namespace TestBanque.Vue
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.lb);
+            this.Controls.Add(this.List_Box1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -170,7 +170,7 @@ namespace TestBanque.Vue
 
         #endregion
 
-        private System.Windows.Forms.ListBox lb;
+        private System.Windows.Forms.ListBox List_Box1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem operationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem créditerToolStripMenuItem;
