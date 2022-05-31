@@ -23,7 +23,7 @@ namespace TestBanque.DAL
                 maConnectionSql = ConnectionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
                 maConnectionSql.openConnection();
 
-                Ocom = maConnectionSql.reqExec("Select idCours, instrument.id,  instrument.nom, cours.jourDate, inscription.paye from inscription INNER JOIN cours On cours.id = inscription.idCours INNER JOIN instrument On instrument.id = cours.idInstrument WHERE idStudent ="+adherant_Select.Numero+" ;");
+                Ocom = maConnectionSql.reqExec("Select idCours, instrument.id,  instrument.nom, cours.jourDate, inscription.paye from inscription INNER JOIN cours On cours.id = inscription.idCours INNER JOIN instrument On instrument.id = cours.idInstrument WHERE idStudent =" + adherant_Select.Numero + " ;");
 
 
                 MySqlDataReader reader = Ocom.ExecuteReader();
@@ -52,6 +52,48 @@ namespace TestBanque.DAL
                 throw (new Exception("" + e));
             }
             return L_inscr;
+        }
+
+        public void validateInscription(Inscritption inscription)
+        {
+            try
+            {
+                maConnectionSql = ConnectionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnectionSql.openConnection();
+
+
+
+                Ocom = maConnectionSql.reqExec("UPDATE inscription SET paye = 1 WHERE idStudent=" + inscription.Adherent.Numero + " AND idCours=" + inscription.Cours.IdCours + ";");
+
+                Ocom.ExecuteNonQuery();
+
+                maConnectionSql.closeConnection();
+            }
+            catch (Exception err)
+            {
+                throw (new Exception("" + err));
+            }
+        }
+
+        public void supp_Inscription(Inscritption inscription)
+        {
+            try
+            {
+                maConnectionSql = ConnectionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnectionSql.openConnection();
+
+                Ocom = maConnectionSql.reqExec("DELETE FROM inscription WHERE idStudent=" + inscription.Adherent.Numero + " AND idCours=" + inscription.Cours.IdCours + ";");
+
+                Ocom.ExecuteNonQuery();
+
+                maConnectionSql.closeConnection();
+            }
+            catch (Exception err)
+            {
+                throw (new Exception("" + err));
+            }
         }
     }
 }

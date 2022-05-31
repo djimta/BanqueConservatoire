@@ -34,8 +34,10 @@ namespace TestBanque.Model
             
         }
 
-        public int Payee { get => Payee; }
+        public int Payee { get => payee; }
+        public Adherent Adherent { get => unAdherent; }
 
+        public Cours Cours { get => unCours; }
         public override string ToString()
         {
             return ("Cours :"+ unCours.NomInstru);

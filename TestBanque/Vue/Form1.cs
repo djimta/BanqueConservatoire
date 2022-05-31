@@ -37,9 +37,7 @@ namespace TestBanque.Vue
         {    
             comboBox1.DataSource = null;
             comboBox1.DataSource = List_adherent;
-            comboBox1.DisplayMember = "Description"; 
-            
-            
+            comboBox1.DisplayMember = "Description";    
         }
 
         private void refreshListBox(int index)
@@ -56,6 +54,14 @@ namespace TestBanque.Vue
                 }
             }*/
 
+        }
+
+        private void refresh_adherentInscriptions()
+        {
+            var selectAdherent = comboBox1.SelectedItem as Adherent;
+            List_inscrptions = monManager.chargementDbInsc(selectAdherent);
+            //List_Box1.Items.Clear();
+            refreshListBox(0);
         }
 
         private void cToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,13 +81,41 @@ namespace TestBanque.Vue
  
         private void lb_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (List_Box1.SelectedItem == null)
+            {
+            }
+            else
+            {
+                panel1.Visible = true;
+
+                var inscri = List_Box1.SelectedItem as Inscritption;
+                if (inscri.Payee == 1)
+                {
+                    panel1.BackColor = Color.Green;
+                }
+                else
+                {
+                    panel1.BackColor = Color.Red;
+                } 
+                    
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-           
+            if (List_Box1.SelectedItem == null)
+            {
+                MessageBox.Show("Vous devez selectionner un adhérent ainsi qu'un inscription !");
+            }
+            else
+            {
+                var inscri = List_Box1.SelectedItem as Inscritption;
+                monManager.validateInscription(inscri);
+
+                this.refresh_adherentInscriptions();
+                panel1.BackColor = Color.Green;
+
+            }
 
         }
 
@@ -121,6 +155,22 @@ namespace TestBanque.Vue
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            if (List_Box1.SelectedItem == null)
+            {
+                MessageBox.Show("Vous devez selectionner un adhérent ainsi qu'un inscription !");
+            }
+            else
+            {
+                var inscription = List_Box1.SelectedItem as Inscritption;
+
+                monManager.supp_Inscription(inscription);
+
+                refresh_adherentInscriptions();
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

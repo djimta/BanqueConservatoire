@@ -29,5 +29,15 @@ namespace TestBanque.Controleur
             return inscritption.insciPayee();
         }
 
+        public void validateInscription(Inscritption inscription)
+        {
+            Idao.validateInscription(inscription);
+        }
+        public void supp_Inscription(Inscritption inscription)
+        {
+            Idao.supp_Inscription(inscription);
+        }
+
+
     }
 }

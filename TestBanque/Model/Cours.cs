@@ -18,6 +18,8 @@ namespace TestBanque.Model
             this.payee = payee;
         }
         public String NomInstru { get => nomInstru; }
+
+        public int IdCours { get => idCours; }
     }
     
 
